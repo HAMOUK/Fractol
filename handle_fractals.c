@@ -6,7 +6,7 @@
 /*   By: hlongin <hlongin@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 01:34:30 by hlongin           #+#    #+#             */
-/*   Updated: 2025/07/07 01:39:27 by hlongin          ###   ########.fr       */
+/*   Updated: 2025/08/12 00:33:27 by hlongin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ int	mandelbrot_iterations(double cr, double ci, int max_iter)
 	return (i);
 }
 
-int	julia_iterations(double zr, double zi, double cr, double ci, int max_iter)
+int	julia_iterations(double zr, double zi, t_julia_params params)
 {
 	double	tmp;
 	int		i;
 
 	i = 0;
-	while (zr * zr + zi * zi <= 4 && i < max_iter)
+	while (zr * zr + zi * zi <= 4 && i < params.max_iter)
 	{
-		tmp = zr * zr - zi * zi + cr;
-		zi = 2 * zr * zi + ci;
+		tmp = zr * zr - zi * zi + params.cr;
+		zi = 2 * zr * zi + params.ci;
 		zr = tmp;
 		i++;
 	}

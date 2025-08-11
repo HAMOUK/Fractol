@@ -10,6 +10,7 @@ MLX_FLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 
 SRC = main.c \
   parsing.c \
+  calculate.c \
   draw.c \
   handle_window1.c \
   handle_window2.c \
